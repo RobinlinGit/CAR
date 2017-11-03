@@ -51,7 +51,37 @@ void L298N_Init(){
 	
 }//初始化对L298N的逻辑输入
 
-void runA( float PWM, _Bool isForward, unsigned times ){
+
+void stop(unsigned times){
+	IN1=0;
+	IN2=0;
+}
+
+void accelerate(){
+	IN1=0;
+	IN2=1;
+	IN3=0;
+	IN4=1;
+	ENA=1;
+	ENB=1;
+}
+
+void neutral(){
+	ENA=0;
+	ENB=0;
+}
+
+void back(){
+	IN1=1;
+	IN2=0;
+	IN3=1;
+	IN4=0;
+	ENA=1;
+	ENB=1;
+}
+
+
+/*void runA( float PWM, _Bool isForward, unsigned times ){
 	unsigned i = 0;
 	if( PWM > 1 || PWM < 0 )return;
 	ENA = 0;
@@ -77,32 +107,4 @@ void runB( float PWM, _Bool isForward, unsigned times ){
 		delay_ms((int)(PWM*100));
 	}
 }
-
-void runForward(float PWM){
-	runA(PWM,1,1);
-	runB(PWM,1,1);
-}
-
-void runBack(float PWM){
-	runA(PWM,0,1);
-	runB(PWM,0,1);
-}
-
-void stop(unsigned times){
-	IN1=0;
-	IN2=0;
-}
-
-void accelerate(){
-	IN1=0;
-	IN2=1;
-	IN3=0;
-	IN4=1;
-	ENA=1;
-	ENB=1;
-}
-
-void neutral(){
-	ENA=0;
-	ENB=0;
-}
+*/
