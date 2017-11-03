@@ -98,7 +98,6 @@ void turn(_Bool isLeft){
 		ENB=1;
 	}
 }
-
 /*void runA( float PWM, _Bool isForward, unsigned times ){
 	unsigned i = 0;
 	if( PWM > 1 || PWM < 0 )return;
@@ -124,5 +123,4 @@ void runB( float PWM, _Bool isForward, unsigned times ){
 		ENB = 0;
 		delay_ms((int)(PWM*100));
 	}
-}
-*/
+}*/

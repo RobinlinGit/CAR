@@ -17,15 +17,15 @@
 #define radius 35.5  //轮胎半径
 
 
-void L298N_Init();
+void L298N_Init(void);
 
 //void runA( float PWM, _Bool isForward, unsigned times );//匀速转
 //void runB( float PWM, _Bool isForward, unsigned times );//匀速转
 //驱动电机，占空比为PWM,isForward表示前进or倒退,times表示次数(一次延时20ms)
 
 void stop(unsigned times);//刹车
-void accelerate();//电机前转
-void neutral();//空档
-void back();//倒车
+void accelerate(void);//电机前转
+void neutral(void);//空档
+void back(void);//倒车
 void turn(_Bool isLeft);//转弯
 
