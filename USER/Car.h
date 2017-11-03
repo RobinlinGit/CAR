@@ -18,10 +18,10 @@
 
 
 void L298N_Init();
-void runA( float PWM, _Bool isForward, unsigned times );
-void runB( float PWM, _Bool isForward, unsigned times );
+void runA( float PWM, _Bool isForward, unsigned times );//匀速转
+void runB( float PWM, _Bool isForward, unsigned times );//匀速转
 //驱动电机，占空比为PWM,isForward表示前进or倒退,times表示次数(一次延时20ms)
-void runForward(float PWM);
+void runForward(float PWM);//跑100ms
 void runBack(float PWM);
 void stop(unsigned times);//刹车
 void accelerate();//电机前转

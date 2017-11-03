@@ -63,7 +63,7 @@ void runA( float PWM, _Bool isForward, unsigned times ){
 		ENA = 0;
 		delay_ms((int)(PWM*100));
 	}
-}//匀速转
+}
 void runB( float PWM, _Bool isForward, unsigned times ){
 	unsigned i = 0;
 	if( PWM > 1 || PWM < 0 )return;
@@ -76,12 +76,12 @@ void runB( float PWM, _Bool isForward, unsigned times ){
 		ENB = 0;
 		delay_ms((int)(PWM*100));
 	}
-}//匀速转
+}
 
 void runForward(float PWM){
 	runA(PWM,1,1);
 	runB(PWM,1,1);
-}//跑100ms
+}
 
 void runBack(float PWM){
 	runA(PWM,0,1);
