@@ -14,15 +14,8 @@ extern uint16_t Usart2RecOrder;//接受顺序
 extern struct DataPack NewData;
 extern struct DataPack OldData;
 
-<<<<<<< HEAD
  int main(void)
- {	//u32 i = 0;
-=======
-extern u8  TIM2CH1_CAPTURE_STA;		//输入捕获状态		    				
-extern u16	TIM2CH1_CAPTURE_VAL;	//输入捕获值
- int main(void){
-	//u32 i = 0;
->>>>>>> c136fc04caf6c854e5fec8e2fa2e9481d40ee0b4
+{	//u32 i = 0;
 	delay_init();	    	 //延时函数初始化
 	
 	ENA = 0;
