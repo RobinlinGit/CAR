@@ -15,7 +15,14 @@ extern struct DataPack NewData;
 extern struct DataPack OldData;
 
  int main(void)
+<<<<<<< HEAD
 {	//u32 i = 0;
+=======
+ {	//u32 i = 0;
+extern u8  TIM2CH1_CAPTURE_STA;		//输入捕获状态		    				
+extern u16	TIM2CH1_CAPTURE_VAL;	//输入捕获值
+	 
+>>>>>>> master
 	delay_init();	    	 //延时函数初始化
 	
 	ENA = 0;
