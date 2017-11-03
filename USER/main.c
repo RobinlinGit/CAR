@@ -9,9 +9,11 @@
 //技术支持：www.openedv.com
 //广州市星翼电子科技有限公司
 
+extern uint16_t Late2Frame;//最近两帧的数据
+extern uint16_t Usart2RecOrder;//接受顺序
+extern struct DataPack NewData;
+extern struct DataPack OldData;
 
-extern u8  TIM2CH1_CAPTURE_STA;		//输入捕获状态		    				
-extern u16	TIM2CH1_CAPTURE_VAL;	//输入捕获值
  int main(void)
  {	//u32 i = 0;
 	delay_init();	    	 //延时函数初始化
