@@ -87,3 +87,22 @@ void runBack(float PWM){
 	runA(PWM,0,1);
 	runB(PWM,0,1);
 }
+
+void stop(unsigned times){
+	IN1=0;
+	IN2=0;
+}
+
+void accelerate(){
+	IN1=0;
+	IN2=1;
+	IN3=0;
+	IN4=1;
+	ENA=1;
+	ENB=1;
+}
+
+void neutral(){
+	ENA=0;
+	ENB=0;
+}
