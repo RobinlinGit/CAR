@@ -49,6 +49,8 @@ extern struct DataPack OldData;
 //void runB( float PWM, _Bool isForward, unsigned times );//匀速转
 //驱动电机，占空比为PWM,isForward表示前进or倒退,times表示次数(一次延时20ms)
 
+void L298N_Init();
+
 void stop(unsigned delay_time);//刹车
 void accelerate(float v_rate,unsigned delay_time);//前进（速度比率（0-1），前进时间）
 void neutral(unsigned delay_time);//空档
