@@ -147,11 +147,12 @@ void USART2_IRQHandler(){
 				break; //此处可能需要一些处理,等平台全部完成后再思考
 			
 		}
-		
-
-				
+		Late2Frame = (Late2Frame<<8) | temp ;
+		if( Late2Frame == 0x0D0A )
+			Usart2RecOrder = 31;
+		USART_ClearFlag(USART2, USART_FLAG_RXNE);
+		USART_ClearITPendingBit(USART2, USART_IT_RXNE);
 	} 
-	
 }
 
 
