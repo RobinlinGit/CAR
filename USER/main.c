@@ -22,9 +22,11 @@ extern u16	TIM2CH1_CAPTURE_VAL;	// ‰»Î≤∂ªÒ÷µ
 	L298N_Init();
 	while(1){
 		accelerate();
-		delay_us(10);
+		delay_ms(10);
 		neutral();
-		delay_us(40);
+		delay_ms(40);
+		turn(1);
+		delay_ms(1000);
 	}
 }
 		/*for( i = 0; i <= 9; i++ )runForward(0.5);

@@ -27,4 +27,5 @@ void stop(unsigned times);//刹车
 void accelerate();//电机前转
 void neutral();//空档
 void back();//倒车
+void turn(_Bool isLeft);//转弯
 

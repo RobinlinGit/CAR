@@ -80,6 +80,24 @@ void back(){
 	ENB=1;
 }
 
+void turn(_Bool isLeft){
+	if(isLeft){
+		IN1=1;
+		IN2=0;
+		IN3=0;
+		IN4=1;
+		ENA=1;
+		ENB=1;
+	}
+	else{
+		IN1=0;
+		IN2=1;
+		IN3=1;
+		IN4=0;
+		ENA=1;
+		ENB=1;
+	}
+}
 
 /*void runA( float PWM, _Bool isForward, unsigned times ){
 	unsigned i = 0;
