@@ -24,11 +24,25 @@ extern struct DataPack OldData;
 	L298N_Init();
 	while(1){
 		accelerate();
-		delay_us(10);
-		neutral();
-		delay_us(40);
+		delay_ms(1000);
+		turn(1);
+		delay_ms(1000);
+		turn(0);
+		delay_ms(1000);
 	}
 }
+ 
+
+
+
+
+
+
+
+
+
+
+
 		/*for( i = 0; i <= 9; i++ )runForward(0.5);
 		for( i = 0; i <= 9; i++ )runBack(0.5);
 		for( i = 0; i <= 9; i++ ){
@@ -41,7 +55,7 @@ extern struct DataPack OldData;
 		}
 	}
 }
-	/*u32 temp=0; 
+	u32 temp=0; 
 	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);// 设置中断优先级分组2
 	delay_init();	    	 //延时函数初始化	
 	uart_init(9600);	 			//9600	 

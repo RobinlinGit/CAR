@@ -51,13 +51,15 @@ extern struct DataPack OldData;
 void Usart2_Init(u32 bound);					//初始化
 void USART2_IRQHandler(void);                 //串口2中断服务程序
 
-void L298N_Init();
-void runA( float PWM, _Bool isForward, unsigned times );
-void runB( float PWM, _Bool isForward, unsigned times );
+void L298N_Init(void);
+
+//void runA( float PWM, _Bool isForward, unsigned times );//匀速转
+//void runB( float PWM, _Bool isForward, unsigned times );//匀速转
 //驱动电机，占空比为PWM,isForward表示前进or倒退,times表示次数(一次延时20ms)
-void runForward(float PWM);
-void runBack(float PWM);
+
 void stop(unsigned times);//刹车
-void accelerate();//电机前转
-void neutral();//空档
+void accelerate(void);//电机前转
+void neutral(void);//空档
+void back(void);//倒车
+void turn(_Bool isLeft);//转弯
 
