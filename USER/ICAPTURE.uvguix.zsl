@@ -1349,9 +1349,15 @@
         <Name>.\main.c</Name>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         <ColumnNumber>3</ColumnNumber>
         <TopLine>1</TopLine>
         <CurrentLine>21</CurrentLine>
+=======
+        <ColumnNumber>16</ColumnNumber>
+        <TopLine>10</TopLine>
+        <CurrentLine>29</CurrentLine>
+>>>>>>> parent of 8d82247... turn
 =======
         <ColumnNumber>16</ColumnNumber>
         <TopLine>10</TopLine>
@@ -1370,9 +1376,15 @@
         <Name>Car.h</Name>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         <ColumnNumber>9</ColumnNumber>
         <TopLine>29</TopLine>
         <CurrentLine>51</CurrentLine>
+=======
+        <ColumnNumber>24</ColumnNumber>
+        <TopLine>6</TopLine>
+        <CurrentLine>30</CurrentLine>
+>>>>>>> parent of 8d82247... turn
 =======
         <ColumnNumber>24</ColumnNumber>
         <TopLine>6</TopLine>
@@ -1391,9 +1403,15 @@
         <Name>.\Car.c</Name>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         <ColumnNumber>0</ColumnNumber>
         <TopLine>7</TopLine>
         <CurrentLine>8</CurrentLine>
+=======
+        <ColumnNumber>9</ColumnNumber>
+        <TopLine>73</TopLine>
+        <CurrentLine>96</CurrentLine>
+>>>>>>> parent of 8d82247... turn
 =======
         <ColumnNumber>9</ColumnNumber>
         <TopLine>73</TopLine>
