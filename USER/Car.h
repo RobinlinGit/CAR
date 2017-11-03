@@ -48,7 +48,7 @@ extern struct DataPack OldData;
 
 
 //以下为USART2的初始配置
-void Usart2_Init(u32 bound);					//初始化
+void Usart2_Init();					//初始化
 void USART2_IRQHandler(void);                 //串口2中断服务程序
 
 void L298N_Init(void);
