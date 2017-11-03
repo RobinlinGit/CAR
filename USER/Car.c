@@ -206,66 +206,75 @@ void L298N_Init(){
 }//初始化对L298N的逻辑输入
 
 
-void stop(unsigned delay_time){
+void stop(unsigned times){
 	IN1=0;
 	IN2=0;
-	IN3=0;
-	IN4=0;
-	delay_ms(delay_time);
 }
 
-void accelerate(float v_rate,unsigned delay_time){
-	int k=delay_time/10;
-	int i=0;
+void accelerate(){
 	IN1=0;
 	IN2=1;
 	IN3=0;
 	IN4=1;
-	for(i=0;i<k;i++){
-		ENA=1;
-		ENB=1;
-		delay_ms(10.0 * v_rate);
-		ENA=0;
-		ENB=0;
-		delay_ms(10.0 * (1.0 - v_rate));
-	}
+	ENA=1;
+	ENB=1;
 }
 
-void neutral(unsigned delay_time){
+void neutral(){
 	ENA=0;
 	ENB=0;
-	delay_ms(delay_time);
 }
 
-void back(float v_rate,unsigned delay_time){
-	int k=delay_time/10;
-	int i=0;
+void back(){
 	IN1=1;
 	IN2=0;
 	IN3=1;
 	IN4=0;
-	for(i=0;i<k;i++){
-		ENA=1;
-		ENB=1;
-		delay_ms(10.0 * v_rate);
-		ENA=0;
-		ENB=0;
-		delay_ms(10.0 * (1.0 - v_rate));
-	}
+	ENA=1;
+	ENB=1;
 }
 
+<<<<<<< HEAD
+<<<<<<< HEAD
 void turn(_Bool is_left, unsigned delay_time){
 	if(is_left){
 		IN3=0;
 		IN4=1;
 		ENA=0;
+=======
+=======
+>>>>>>> parent of 8d82247... turn
+void turn(_Bool isLeft){
+	if(isLeft){
+		IN1=1;
+		IN2=0;
+		IN3=0;
+		IN4=1;
+		ENA=1;
+<<<<<<< HEAD
+>>>>>>> parent of 8d82247... turn
+=======
+>>>>>>> parent of 8d82247... turn
 		ENB=1;
 	}
 	else{
 		IN1=0;
 		IN2=1;
+<<<<<<< HEAD
+<<<<<<< HEAD
 		ENA=1;
 		ENB=0;
+=======
+=======
+>>>>>>> parent of 8d82247... turn
+		IN3=1;
+		IN4=0;
+		ENA=1;
+		ENB=1;
+<<<<<<< HEAD
+>>>>>>> parent of 8d82247... turn
+=======
+>>>>>>> parent of 8d82247... turn
 	}
 	delay_ms(delay_time);
 }

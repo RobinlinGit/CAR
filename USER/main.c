@@ -18,7 +18,17 @@ extern struct DataPack OldData;
  {	//u32 i = 0;
 extern u8  TIM2CH1_CAPTURE_STA;		//输入捕获状态		    				
 extern u16	TIM2CH1_CAPTURE_VAL;	//输入捕获值
+<<<<<<< HEAD
+<<<<<<< HEAD
 	 
+=======
+ int main(void)
+ {	//u32 i = 0;
+>>>>>>> parent of 8d82247... turn
+=======
+ int main(void)
+ {	//u32 i = 0;
+>>>>>>> parent of 8d82247... turn
 	delay_init();	    	 //延时函数初始化
 	
 	ENA = 0;
@@ -26,6 +36,8 @@ extern u16	TIM2CH1_CAPTURE_VAL;	//输入捕获值
 	LED_Init();
 	L298N_Init();
 	while(1){
+<<<<<<< HEAD
+<<<<<<< HEAD
 		accelerate(0.2,1000);
 		stop(100);
 		turn(1,300);
@@ -34,6 +46,19 @@ extern u16	TIM2CH1_CAPTURE_VAL;	//输入捕获值
 		stop(100);
 		turn(0,300);
 		stop(1000);
+=======
+=======
+>>>>>>> parent of 8d82247... turn
+		accelerate();
+		delay_ms(1000);
+		turn(1);
+		delay_ms(1000);
+		turn(0);
+		delay_ms(1000);
+<<<<<<< HEAD
+>>>>>>> parent of 8d82247... turn
+=======
+>>>>>>> parent of 8d82247... turn
 	}
 }
  
