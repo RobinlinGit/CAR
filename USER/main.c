@@ -12,8 +12,8 @@
 
 extern u8  TIM2CH1_CAPTURE_STA;		//输入捕获状态		    				
 extern u16	TIM2CH1_CAPTURE_VAL;	//输入捕获值
- int main(void)
- {	//u32 i = 0;
+ int main(void){
+	//u32 i = 0;
 	delay_init();	    	 //延时函数初始化
 	
 	ENA = 0;
@@ -21,12 +21,15 @@ extern u16	TIM2CH1_CAPTURE_VAL;	//输入捕获值
 	LED_Init();
 	L298N_Init();
 	while(1){
-		accelerate();
-		delay_ms(1000);
-		turn(1);
-		delay_ms(1000);
-		turn(0);
-		delay_ms(1000);
+		accelerate(0.2,1000);
+		stop(1000);
+		turn(0,0.2,100);
+		stop(1000);
+		back(0.2,1000);
+		stop(1000);
+		turn(0.2,0,100);
+		stop(1000);
+		
 	}
 }
  

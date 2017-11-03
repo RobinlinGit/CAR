@@ -52,50 +52,82 @@ void L298N_Init(){
 }//初始化对L298N的逻辑输入
 
 
-void stop(unsigned times){
+void stop(unsigned delay_time){
 	IN1=0;
 	IN2=0;
+	IN3=0;
+	IN4=0;
+	delay_ms(delay_time);
 }
 
-void accelerate(){
+void accelerate(float v_rate,unsigned delay_time){
+	int k=delay_time/10;
+	int i=0;
 	IN1=0;
 	IN2=1;
 	IN3=0;
 	IN4=1;
-	ENA=1;
-	ENB=1;
+	for(i=0;i<k;i++){
+		ENA=1;
+		ENB=1;
+		delay_ms(10.0 * v_rate);
+		ENA=0;
+		ENB=0;
+		delay_ms(10.0 * (1.0 - v_rate));
+	}
 }
 
-void neutral(){
+void neutral(unsigned delay_time){
 	ENA=0;
 	ENB=0;
+	delay_ms(delay_time);
 }
 
-void back(){
+void back(float v_rate,unsigned delay_time){
+	int k=delay_time/10;
+	int i=0;
 	IN1=1;
 	IN2=0;
 	IN3=1;
 	IN4=0;
-	ENA=1;
-	ENB=1;
+	for(i=0;i<k;i++){
+		ENA=1;
+		ENB=1;
+		delay_ms(10.0 * v_rate);
+		ENA=0;
+		ENB=0;
+		delay_ms(10.0 * (1.0 - v_rate));
+	}
 }
 
-void turn(_Bool isLeft){
-	if(isLeft){
-		IN1=1;
-		IN2=0;
-		IN3=0;
-		IN4=1;
-		ENA=1;
-		ENB=1;
-	}
-	else{
+void turn(float left_rate, float right_rate, unsigned delay_time){
+	int k=delay_time/10;
+	int i=0;
+	if(left_rate>0){
 		IN1=0;
 		IN2=1;
+	}
+	else{
+		IN1=1;
+		IN2=0;
+	}
+	if(right_rate>0){
+		IN3=0;
+		IN4=1;
+	}
+	else{
 		IN3=1;
 		IN4=0;
+	}
+	for(i=0;i<k;i++){
 		ENA=1;
+		delay_ms(10.0 * left_rate);
 		ENB=1;
+		delay_ms(10.0 * right_rate);
+		ENA=0;
+		delay_ms(10.0 * (1.0 - left_rate));
+		ENB=0;
+		delay_ms(10.0 * (1.0 - right_rate));
 	}
 }
 /*void runA( float PWM, _Bool isForward, unsigned times ){
