@@ -27,5 +27,5 @@ void stop(unsigned delay_time);//刹车
 void accelerate(float v_rate,unsigned delay_time);//前进（速度比率（0-1），前进时间）
 void neutral(unsigned delay_time);//空档
 void back(float v_rate,unsigned delay_time);//倒车（速度比率（0-1），前进时间）
-void turn(float left_rate, float right_rate, unsigned delay_time);//转弯
+void turn(_Bool is_left, unsigned delay_time);//转弯
 

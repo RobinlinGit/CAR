@@ -100,35 +100,20 @@ void back(float v_rate,unsigned delay_time){
 	}
 }
 
-void turn(float left_rate, float right_rate, unsigned delay_time){
-	int k=delay_time/10;
-	int i=0;
-	if(left_rate>0){
-		IN1=0;
-		IN2=1;
-	}
-	else{
-		IN1=1;
-		IN2=0;
-	}
-	if(right_rate>0){
+void turn(_Bool is_left, unsigned delay_time){
+	if(is_left){
 		IN3=0;
 		IN4=1;
+		ENA=0;
+		ENB=1;
 	}
 	else{
-		IN3=1;
-		IN4=0;
-	}
-	for(i=0;i<k;i++){
+		IN1=0;
+		IN2=1;
 		ENA=1;
-		delay_ms(10.0 * left_rate);
-		ENB=1;
-		delay_ms(10.0 * right_rate);
-		ENA=0;
-		delay_ms(10.0 * (1.0 - left_rate));
 		ENB=0;
-		delay_ms(10.0 * (1.0 - right_rate));
 	}
+	delay_ms(delay_time);
 }
 /*void runA( float PWM, _Bool isForward, unsigned times ){
 	unsigned i = 0;

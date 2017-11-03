@@ -23,13 +23,12 @@ extern u16	TIM2CH1_CAPTURE_VAL;	// ‰»Î≤∂ªÒ÷µ
 	while(1){
 		accelerate(0.2,1000);
 		stop(1000);
-		turn(0,0.2,100);
+		turn(1,100);
 		stop(1000);
 		back(0.2,1000);
 		stop(1000);
-		turn(0.2,0,100);
+		turn(0,100);
 		stop(1000);
-		
 	}
 }
  
